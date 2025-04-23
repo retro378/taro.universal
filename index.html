@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таролог | Головна</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #toggle-sound {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Фонова музика -->
+    <audio id="background-audio" autoplay loop>
+        <source src="https://d11.drivemusic.club/dl/7AOmdloR0tC-UR9LDMv8Xg/1745310804/download_music/2015/06/mocart-rekviem-3.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Кнопка керування звуком -->
+    <button id="toggle-sound">🔊 Вимкнути звук</button>
+
+    <header>
+        <h1>Послуги таролога</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="services">
+        <h2>Наші послуги</h2>
+        <ul>
+            <li>🃏 Ворожіння на картах Таро</li>
+            <li>🔮 Передбачення майбутнього</li>
+            <li>🌙 Духовні консультації</li>
+            <li>💫 Гармонізація енергетики</li>
+        </ul>
+    </section>
+
+    <!-- Відео -->
+    <section class="media">
+        <h2>Магічне відео</h2>
+        <video width="640" height="360" controls>
+            <source src="https://videos.pexels.com/video-files/6014541/6014541-uhd_2732_1440_24fps.mp4">
+            Ваш браузер не підтримує відтворення відео.
+        </video>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Зв'яжіться з нами</h2>
+        <p>Телефон: +380 99 123 45 67</p>
+        <p>Email: tarolog@example.com</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Таролог. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        const audio = document.getElementById('background-audio');
+        const toggleBtn = document.getElementById('toggle-sound');
+
+        toggleBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                toggleBtn.textContent = '🔊 Вимкнути звук';
+            } else {
+                audio.pause();
+                toggleBtn.textContent = '🔈 Увімкнути звук';
+            }
+        });
+    </script>
+</body>
+</html>
